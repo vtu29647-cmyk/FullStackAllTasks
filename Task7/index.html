@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Feedback Form - Task 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1> Interactive Feedback Form</h1>
+    <p>Share your valuable feedback with us</p>
+</header>
+
+<div class="container">
+
+    <!-- Feedback Form -->
+    <div class="card form-card">
+        <h2>📋 Customer Feedback Form</h2>
+        
+        <form id="feedbackForm">
+            
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Enter your full name"
+                    required
+                    minlength="3"
+                    maxlength="50"
+                >
+                <span class="validation-msg" id="name-msg"></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="example@email.com"
+                    required
+                >
+                <span class="validation-msg" id="email-msg"></span>
+            </div>
+
+            <!-- Phone Field -->
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="1234567890"
+                    required
+                    pattern="[0-9]{10}"
+                >
+                <span class="validation-msg" id="phone-msg"></span>
+            </div>
+
+            <!-- Rating Field -->
+            <div class="form-group">
+                <label for="rating">Service Rating <span class="required">*</span></label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select Rating</option>
+                    <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                    <option value="4">⭐⭐⭐⭐ Good</option>
+                    <option value="3">⭐⭐⭐ Average</option>
+                    <option value="2">⭐⭐ Poor</option>
+                    <option value="1">⭐ Very Poor</option>
+                </select>
+                <span class="validation-msg" id="rating-msg"></span>
+            </div>
+
+            <!-- Category Field -->
+            <div class="form-group">
+                <label for="category">Feedback Category <span class="required">*</span></label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Product Quality">Product Quality</option>
+                    <option value="Customer Service">Customer Service</option>
+                    <option value="Delivery">Delivery</option>
+                    <option value="Website Experience">Website Experience</option>
+                    <option value="Pricing">Pricing</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span class="validation-msg" id="category-msg"></span>
+            </div>
+
+            <!-- Comments Field -->
+            <div class="form-group">
+                <label for="comments">Your Comments <span class="required">*</span></label>
+                <textarea 
+                    id="comments" 
+                    name="comments" 
+                    rows="5" 
+                    placeholder="Share your detailed feedback here..."
+                    required
+                    minlength="10"
+                    maxlength="500"
+                ></textarea>
+                <span class="validation-msg" id="comments-msg"></span>
+                <small class="char-count">Characters: <span id="char-count">0</span>/500</small>
+            </div>
+
+            <!-- Submit Button (Double-click required) -->
+            <div class="form-group">
+                <button type="button" id="submitBtn" class="btn-submit">
+                    🖱️ Double-Click to Submit
+                </button>
+                <p class="submit-hint">💡 Double-click the button above to confirm submission</p>
+            </div>
+
+            <!-- Response Message -->
+            <div id="responseMessage" class="message"></div>
+
+        </form>
+    </div>
+
+    <!-- All Feedbacks Display -->
+    <div class="card">
+        <h2>📊 All Feedbacks (<span id="feedbackCount">0</span>)</h2>
+        <button class="btn-secondary" onclick="loadFeedbacks()">🔄 Refresh</button>
+        <button class="btn-danger" onclick="clearAllFeedbacks()">🗑️ Clear All</button>
+        <div id="feedbacksList" class="feedbacks-list">
+            <p style="text-align: center; color: #999;">No feedbacks yet</p>
+        </div>
+    </div>
+
+    <!-- Statistics Card -->
+    <div class="card stats-card">
+        <h2>📈 Feedback Statistics</h2>
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-item">
+                <h3 id="totalFeedbacks">0</h3>
+                <p>Total Feedbacks</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="avgRating">0.0</h3>
+                <p>Average Rating</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="excellentCount">0</h3>
+                <p>⭐⭐⭐⭐⭐ Ratings</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Interactive Feedback System | Task 7 | No Backend Needed
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

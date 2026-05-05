@@ -1,0 +1,1 @@
+Task 13: Add exception handling and validation to the RESTful application. Implement global exception handling and apply validation annotations to ensure correct input data and meaningful error responses.

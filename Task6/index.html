@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Logging using Triggers & Views</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🔍 Automated Logging using Triggers & Views</h1>
+    <p>Audit Logging in Enterprise Databases</p>
+</header>
+
+<div class="container">
+
+    <!-- Add Account Form -->
+    <div class="card">
+        <h2> Add New Account</h2>
+        <form id="addAccountForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter account name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email address" required>
+            </div>
+            <div class="form-group">
+                <label for="balance">Balance:</label>
+                <input type="number" id="balance" name="balance" placeholder="Enter balance" step="0.01" value="0">
+            </div>
+            <button type="submit" class="btn-submit">Create Account</button>
+            <div id="addMessage" class="message"></div>
+        </form>
+    </div>
+
+    <!-- All Accounts -->
+    <div class="card">
+        <h2>📋 All Accounts</h2>
+        <table id="accountsTable" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="accountsBody">
+                <tr><td colspan="6" style="text-align: center; color: #999;">Loading accounts...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Audit Logs -->
+    <div class="card">
+        <h2>📜 Audit Logs (Last 100 Actions)</h2>
+        <div style="margin-bottom: 15px;">
+            <button class="btn-secondary" onclick="loadLogs()">🔄 Refresh Logs</button>
+        </div>
+        <table id="logsTable" border="1">
+            <thead>
+                <tr>
+                    <th>Log ID</th>
+                    <th>Account ID</th>
+                    <th>Operation</th>
+                    <th>Old Value</th>
+                    <th>New Value</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id="logsBody">
+                <tr><td colspan="6" style="text-align: center; color: #999;">Loading logs...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Daily Activity Report -->
+    <div class="card">
+        <h2>📊 Daily Activity Report</h2>
+        <table id="reportTable" border="1">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Operation</th>
+                    <th>Total Operations</th>
+                    <th>Unique Accounts</th>
+                    <th>First Action</th>
+                    <th>Last Action</th>
+                </tr>
+            </thead>
+            <tbody id="reportBody">
+                <tr><td colspan="6" style="text-align: center; color: #999;">Loading report...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Account Activity Summary -->
+    <div class="card">
+        <h2>📈 Account Activity Summary</h2>
+        <table id="summaryTable" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Current Balance</th>
+                    <th>Total Changes</th>
+                    <th>Inserts</th>
+                    <th>Updates</th>
+                    <th>Last Modified</th>
+                </tr>
+            </thead>
+            <tbody id="summaryBody">
+                <tr><td colspan="8" style="text-align: center; color: #999;">Loading summary...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Automated Logging Project | Task 6 | DBMS Mini Project
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

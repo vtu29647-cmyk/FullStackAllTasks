@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction-Based Payment Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Transaction-Based Payment Simulation</h1>
+    <p>Simulating Secure Online Payment Process</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>💳 Process Payment</h2>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="userId">User ID (Payer):</label>
+                <input type="number" id="userId" name="userId" placeholder="Enter User ID" required>
+                <small id="userBalance" style="color: #666; margin-top: 5px; display: block;"></small>
+            </div>
+            <div class="form-group">
+                <label for="merchantId">Merchant ID (Receiver):</label>
+                <input type="number" id="merchantId" name="merchantId" placeholder="Enter Merchant ID" required>
+                <small id="merchantBalance" style="color: #666; margin-top: 5px; display: block;"></small>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to Transfer:</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter Amount" step="0.01" required>
+            </div>
+            <button type="submit" class="btn-submit">Process Payment</button>
+            <div id="message" class="message"></div>
+        </form>
+
+        <div id="balanceContainer" style="margin-top: 20px; display: none;">
+            <h3>💰 Updated Balances</h3>
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1; padding: 15px; background: #f0f0f0; border-radius: 5px;">
+                    <p><strong>User (Payer)</strong></p>
+                    <p style="font-size: 18px; color: #d32f2f;">Balance: ₹<span id="userNewBalance">0.00</span></p>
+                </div>
+                <div style="flex: 1; padding: 15px; background: #f0f0f0; border-radius: 5px;">
+                    <p><strong>Merchant (Receiver)</strong></p>
+                    <p style="font-size: 18px; color: #388e3c;">Balance: ₹<span id="merchantNewBalance">0.00</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📊 Transaction Details</h2>
+        <table id="transactionTable" border="1">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>User ID</th>
+                    <th>Merchant ID</th>
+                    <th>Amount Deducted</th>
+                    <th>Amount Credited</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td colspan="6" style="text-align: center; color: #999;">No transactions yet</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Payment Simulation Project | DBMS Mini Project
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

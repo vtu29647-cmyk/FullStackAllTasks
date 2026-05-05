@@ -1,0 +1,1 @@
+Task 14: Design a simple microservices-based system by splitting a monolithic application into at least two independent services. Apply microservices design principles such as loose coupling, single responsibility, and independent deployment.

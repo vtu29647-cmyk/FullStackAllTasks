@@ -1,0 +1,1 @@
+Task 17: Enable inter-service communication using REST-based communication. Create one microservice that consumes REST APIs exposed by another microservice and handles responses and failures gracefully.

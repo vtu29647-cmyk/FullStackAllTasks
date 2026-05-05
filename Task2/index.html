@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Student Dashboard</h2>
+
+<form id="studentForm" onsubmit="event.preventDefault(); login();">
+  <input type="text" id="name" placeholder="Name" required>
+  
+  <select id="department">
+    <option value="EEE">EEE</option>
+    <option value="CSE">CSE</option>
+    <option value="ECE">ECE</option>
+    <option value="IT">IT</option>
+    <option value="CIVIL">CIVIL</option>
+  </select>
+
+  <input type="date" id="joiningDate" required>
+
+  <button type="submit">Add Student</button>
+</form>
+
+<hr>
+
+<h3>Filter & Sort</h3>
+
+<select id="filterDepartment">
+  <option value="all">All Departments</option>
+  <option value="EEE">EEE</option>
+  <option value="CSE">CSE</option>
+  <option value="ECE">ECE</option>
+  <option value="IT">IT</option>
+  <option value="CIVIL">CIVIL</option>
+</select>
+
+<button id="sortName">Sort by Name</button>
+<button id="sortDate">Sort by Date</button>
+
+<hr>
+
+<table border="1" id="studentTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Joining Date</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<hr>
+
+<h3>Department Count</h3>
+<ul id="countList"></ul>
+
+<script src="script.js"></script>
+</body>
+</html>
